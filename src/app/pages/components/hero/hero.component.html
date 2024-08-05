@@ -1,0 +1,31 @@
+<section class="hero" [ngClass]="{'hero--home': pageData().page == 'home'}" [ngStyle]="{'background-image': !pageData().carousel ?  'url(' + pageData().images[0]?.image + ')' : 'none'}">
+    @if (pageData().carousel) {
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @for (image of pageData().images; track image.id;) {
+                    <div class="carousel-item" [ngClass]="{'active': image.id == pageData().images[0].id}">
+                        <img [src]="image.image" class="d-block w-100" [alt]="image.name" title="background">
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    @if (pageData().page == "home") {
+        <div class="container-css">
+            <h1 class="hero__title text-hover-theme mt-3 mb-2">{{pageData().title}}</h1>
+            <h3 class="hero__subtitle">{{pageData().subtitle}}</h3>
+        </div>
+    } @else {
+        <div class="container-css">
+            <h2 class="hero__title">{{pageData().title}}</h2>
+            <div class="hero__return">
+                <a href="" class="text-hover-theme">Inicio</a>
+                <h5>{{pageData().subtitle}}</h5>
+            </div>
+        </div>
+    }
+    <figure class="hero__footer">
+        <div class="footer__content footer__content--movil"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,128.41 C149.99,150.00 397.29,159.20 502.69,95.84 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+        <div class="footer__content footer__content--desktop"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.69,80.25 C277.09,198.67 308.13,0.33 500.00,80.25 L500.56,150.31 L0.57,152.30 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </figure>
+</section>
