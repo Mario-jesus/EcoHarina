@@ -8,11 +8,6 @@
     row-gap: 1em;
 }
 
-.section-info:nth-child(odd) {
-    flex-direction: row-reverse;
-    text-align: right;
-}
-
 .section-info > .content {
     width: 100%;
 }
@@ -47,6 +42,12 @@
 }
 
 @media only screen and (min-width: 992px) {
+
+    .section-info:nth-child(odd) {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+
     .section-info > .content {
         width: 59%;
     }
