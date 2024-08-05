@@ -1,6 +1,6 @@
 .section-info {
     padding: 1em;
-    margin-bottom: 2em;
+    margin: 1.5em auto 2em;
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: space-between;
