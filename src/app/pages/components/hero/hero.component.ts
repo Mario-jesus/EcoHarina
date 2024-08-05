@@ -18,6 +18,8 @@ export class HeroComponent {
     effect(() => {
       if (!this.pageData().carousel && this.pageData().images.length > 0) {
         this.backgroundImage = `url(${this.pageData().images[0].image})`;
+      } else {
+        this.backgroundImage = "none";
       }
     });
   }

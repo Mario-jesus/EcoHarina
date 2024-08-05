@@ -3,7 +3,7 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @for (image of pageData().images; track image.id;) {
-                    <div class="carousel-item" [ngClass]="{'active': image.id == pageData().images[0].id}">
+                    <div class="carousel-item" data-bs-interval="3000" [ngClass]="{'active': image.id == pageData().images[0].id}">
                         <img [src]="image.image" class="d-block w-100" [alt]="image.name" title="background">
                     </div>
                 }
