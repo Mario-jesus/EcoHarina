@@ -1,4 +1,4 @@
-<section class="hero" [ngClass]="{'hero--home': pageData().page == 'home'}" [ngStyle]="{'background-image': !pageData().carousel ?  'url(' + pageData().images[0]?.image + ')' : 'none'}">
+<section class="hero" [ngClass]="{'hero--home': pageData().page == 'home'}" [ngStyle]="{'background-image': backgroundImage}">
     @if (pageData().carousel) {
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, effect, input } from '@angular/core';
 import { PageHeroI } from '../../../interfaces/page';
 
 @Component({
@@ -10,5 +10,16 @@ import { PageHeroI } from '../../../interfaces/page';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
+
   public pageData = input.required<PageHeroI>({alias: 'heroData'});
+  protected backgroundImage = "none";
+
+  constructor() {
+    effect(() => {
+      if (!this.pageData().carousel && this.pageData().images.length > 0) {
+        this.backgroundImage = `url(${this.pageData().images[0].image})`;
+      }
+    });
+  }
+
 }
