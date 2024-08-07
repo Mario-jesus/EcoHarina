@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, input } from '@angular/core';
+import { Carousel } from 'bootstrap';
 import { PageHeroI } from '../../../interfaces/page';
 
 @Component({
@@ -20,6 +21,8 @@ export class HeroComponent {
         this.backgroundImage = `url(${this.pageData().images[0].image})`;
       } else {
         this.backgroundImage = "none";
+        const carouselElement = <HTMLElement>document.getElementById('carouselHero');
+        if (carouselElement) new Carousel(carouselElement);
       }
     });
   }

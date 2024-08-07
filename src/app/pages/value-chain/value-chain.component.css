@@ -1,0 +1,13 @@
+.section-info-local {
+    max-width: 992px;
+}
+
+.section-info-local__picture {
+    width: 100%;
+    margin: 1em 0 0;
+
+    & > img {
+        width: 50%;
+        display: block;
+    }
+}
