@@ -1,24 +1,24 @@
 <header>
     <nav class="navbar-css">
-        <input type="checkbox" id="nav-check">
+        <input type="checkbox" id="nav-check" #navCheck>
         <label for="nav-check" class="menu__label">
             <img src="/assets/close.svg" alt="close" class="menu__hamburguer menu__hamburguer--close">
             <img src="/assets/menu.svg" alt="menu" class="menu__hamburguer menu__hamburguer--show">
         </label>
         <div class="container-css">
-            <a [routerLink]="['']" class="nav__logo"><img src="/assets/ecoharina.png" alt="logocicoti"></a>
+            <a [routerLink]="['']" (click)="hideNavBar();" class="nav__logo"><img src="/assets/ecoharina.png" alt="logocicoti"></a>
             <div class="nav__content">
                 <div class="nav__links">
-                    <a [routerLink]="['']">Inicio</a>
-                    <a [routerLink]="['value-chain']" class="text-twinkle text-hover-theme">Cadena de valor</a>
+                    <a [routerLink]="['']" (click)="hideNavBar();">Inicio</a>
+                    <a [routerLink]="['value-chain']" (click)="hideNavBar();" class="text-twinkle text-hover-theme">Cadena de valor</a>
                     <div class="nav__dropdown">
                         <input type="checkbox" id="navAboutProduct" class="dropdown__checkbox">
                         <label for="navAboutProduct"><a class="dropdown__link">Nuestro producto</a></label>
                         <div class="dropdown__content dropdown__content--main">
-                            <a href="#">Sobre el producto</a>
-                            <a href="#">Sostenibilidad</a>
-                            <a href="#">Información nutrimental</a>
-                            <a href="#">Preguntas frecuentes</a>
+                            <a href="#" (click)="hideNavBar();">Sobre el producto</a>
+                            <a href="#" (click)="hideNavBar();">Sostenibilidad</a>
+                            <a href="#" (click)="hideNavBar();">Información nutrimental</a>
+                            <a href="#" (click)="hideNavBar();">Preguntas frecuentes</a>
                         </div>
                     </div>
                     <div class="nav__dropdown">
@@ -29,15 +29,15 @@
                                 <input type="checkbox" id="navContact" class="dropdown__checkbox">
                                 <label for="navContact"><a class="dropdown__link">Contacto</a></label>
                                 <div class="dropdown__content dropdown__content--nested">
-                                    <a href="#">Contacto</a>
-                                    <a href="#">Ubicación</a>
+                                    <a href="#" (click)="hideNavBar();">Contacto</a>
+                                    <a href="#" (click)="hideNavBar();">Ubicación</a>
                                 </div>
                             </div>
-                            <a href="#">Nuestro equipo</a>
-                            <a href="#">Misión y valores</a>
+                            <a href="#" (click)="hideNavBar();">Nuestro equipo</a>
+                            <a href="#" (click)="hideNavBar();">Misión y valores</a>
                         </div>
                     </div>
-                    <a href="#" class="text-hover-theme">Galería</a>
+                    <a href="#" (click)="hideNavBar();" class="text-hover-theme">Galería</a>
                 </div>
             </div>
         </div>
