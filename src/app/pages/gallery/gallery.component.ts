@@ -47,8 +47,14 @@ export class GalleryComponent implements OnInit, AfterViewInit {
     this.imageMain.nativeElement.src = src;
     this.imageDescription.nativeElement.textContent = description;
 
-    if (description === "") this.showDescriptionBtn.nativeElement.classList.add("d-none");
-    else this.showDescriptionBtn.nativeElement.classList.remove("d-none");
+    if (description === "") {
+      this.showDescriptionBtn.nativeElement.classList.add("d-none");
+      this.imageDescription.nativeElement.classList.add("d-none");
+    }
+    else {
+      this.showDescriptionBtn.nativeElement.classList.remove("d-none");
+      this.imageDescription.nativeElement.classList.remove("d-none");
+    }
 
     this.showImageToggle.nativeElement.checked = true;
   }
