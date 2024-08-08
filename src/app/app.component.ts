@@ -14,15 +14,16 @@ import { HeroComponent } from './pages/components/hero/hero.component';
 export class AppComponent implements OnInit {
 
   public heroData!: WritableSignal<PageHeroI>;
-  @ViewChild("navCheck") navCheck!: ElementRef<HTMLInputElement>;
   private _pageService = inject(PageService);
+  @ViewChild("navCheck") navCheck!: ElementRef<HTMLInputElement>;
 
   ngOnInit(): void {
     this.heroData = this._pageService.getHeroData;
   }
 
-  protected hideNavBar() {
+  protected onPageChange() {
     this.navCheck.nativeElement.checked = false;
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
   }
 
 }

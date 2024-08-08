@@ -39,7 +39,29 @@ main {
     overflow: hidden;
 }
 
-/* Components */
+.btn-css {
+    color: var(--theme-color);
+    padding: 1em 1.5em;
+    border: 2px solid var(--theme-color);
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 500ms;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    display: inline-block;
+
+    &:hover {
+        background-color: var(--theme-color);
+        color: #fff;
+    }
+
+    &:active {
+        opacity: 80%;
+        transform: scale(90%);
+    }
+}
 
 .text-hover-theme {
     transition: var(--transition-2);
