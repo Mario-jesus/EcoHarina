@@ -11,16 +11,7 @@
                 <div class="nav__links">
                     <a [routerLink]="['']" (click)="onPageChange();">Inicio</a>
                     <a [routerLink]="['value-chain']" (click)="onPageChange();" class="text-twinkle text-hover-theme">Cadena de valor</a>
-                    <div class="nav__dropdown">
-                        <input type="checkbox" id="navAboutProduct" class="dropdown__checkbox">
-                        <label for="navAboutProduct"><a class="dropdown__link">Nuestro producto</a></label>
-                        <div class="dropdown__content dropdown__content--main">
-                            <a href="#" (click)="onPageChange();">Sobre el producto</a>
-                            <a href="#" (click)="onPageChange();">Sostenibilidad</a>
-                            <a href="#" (click)="onPageChange();">Información nutrimental</a>
-                            <a href="#" (click)="onPageChange();">Preguntas frecuentes</a>
-                        </div>
-                    </div>
+                    <a [routerLink]="['our-product']" (click)="onPageChange();">Nuestro producto</a>
                     <div class="nav__dropdown">
                         <input type="checkbox" id="navAboutUs" class="dropdown__checkbox">
                         <label for="navAboutUs"><a class="dropdown__link">Sobre nosotros</a></label>
