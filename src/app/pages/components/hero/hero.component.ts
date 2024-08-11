@@ -1,12 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { Component, effect, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Carousel } from 'bootstrap';
 import { PageHeroI } from '../../../interfaces/page';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
