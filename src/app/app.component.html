@@ -11,24 +11,9 @@
                 <div class="nav__links">
                     <a [routerLink]="['']" (click)="onPageChange();">Inicio</a>
                     <a [routerLink]="['value-chain']" (click)="onPageChange();" class="text-twinkle text-hover-theme">Cadena de valor</a>
-                    <a [routerLink]="['our-product']" (click)="onPageChange();">Nuestro producto</a>
-                    <div class="nav__dropdown">
-                        <input type="checkbox" id="navAboutUs" class="dropdown__checkbox">
-                        <label for="navAboutUs"><a class="dropdown__link">Sobre nosotros</a></label>
-                        <div class="dropdown__content dropdown__content--main">
-                            <div class="dropdown__nested">
-                                <input type="checkbox" id="navContact" class="dropdown__checkbox">
-                                <label for="navContact"><a class="dropdown__link">Contacto</a></label>
-                                <div class="dropdown__content dropdown__content--nested">
-                                    <a href="#" (click)="onPageChange();">Contacto</a>
-                                    <a href="#" (click)="onPageChange();">Ubicación</a>
-                                </div>
-                            </div>
-                            <a href="#" (click)="onPageChange();">Nuestro equipo</a>
-                            <a href="#" (click)="onPageChange();">Misión y valores</a>
-                        </div>
-                    </div>
                     <a [routerLink]="['gallery']" (click)="onPageChange();" class="text-hover-theme">Galería</a>
+                    <a [routerLink]="['our-product']" (click)="onPageChange();">Nuestro producto</a>
+                    <a [routerLink]="['about-us']" (click)="onPageChange();">Sobre nosotros</a>
                 </div>
             </div>
         </div>

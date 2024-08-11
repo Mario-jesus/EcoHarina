@@ -387,7 +387,6 @@ ul li:not(:first-child) {
     & > img {
         width: 100%;
         max-height: 350px;
-        box-shadow: 0 0 10px -2px #0008;
         border-radius: 10px;
         object-fit: cover;
         display: block;
