@@ -667,6 +667,12 @@ ul li:not(:first-child) {
     flex-grow: 1;
 }
 
+/* Animations classes */
+
+.showComponentAnimation {
+    animation: showComponent 1s both;
+}
+
 /* Animations */
 
 @keyframes twinkle {
@@ -676,6 +682,16 @@ ul li:not(:first-child) {
 
     from {
         opacity: 0;
+    }
+}
+
+@keyframes showComponent {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    } to {
+        opacity: 1;
+        transform: unset;
     }
 }
 
