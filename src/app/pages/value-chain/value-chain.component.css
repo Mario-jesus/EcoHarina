@@ -51,7 +51,7 @@
     margin: 4em 0 2.5em;
 }
 
-.section-process h3, .section-process h4, .section-process p {
+.section-process h3, .section-process h4, .section-process p, .section-process ol > li {
     color: #fff;
 }
 

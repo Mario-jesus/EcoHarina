@@ -6,14 +6,14 @@
             <img src="/assets/menu.svg" alt="menu" class="menu__hamburguer menu__hamburguer--show">
         </label>
         <div class="container-css">
-            <a [routerLink]="['']" (click)="onPageChange();" class="nav__logo"><img src="/assets/ecoharina.png" alt="logocicoti"></a>
+            <a [routerLink]="['']" (click)="onPageChange();" class="nav__logo" [ngClass]="{'active': onCurrentPage('')}"><img src="/assets/ecoharina.png" alt="logocicoti"></a>
             <div class="nav__content">
                 <div class="nav__links">
-                    <a [routerLink]="['']" (click)="onPageChange();">Inicio</a>
-                    <a [routerLink]="['value-chain']" (click)="onPageChange();" class="text-twinkle text-hover-theme">Cadena de valor</a>
-                    <a [routerLink]="['gallery']" (click)="onPageChange();" class="text-hover-theme">Galería</a>
-                    <a [routerLink]="['our-product']" (click)="onPageChange();">Nuestro producto</a>
-                    <a [routerLink]="['about-us']" (click)="onPageChange();">Sobre nosotros</a>
+                    <a [routerLink]="['']" (click)="onPageChange();" [ngClass]="{'active': onCurrentPage('')}">Inicio</a>
+                    <a [routerLink]="['value-chain']" (click)="onPageChange();" class="text-hover-theme" [ngClass]="{'active': onCurrentPage('value-chain')}">Cadena de valor</a>
+                    <a [routerLink]="['our-product']" (click)="onPageChange();" [ngClass]="{'active': onCurrentPage('our-product')}">Nuestro producto</a>
+                    <a [routerLink]="['gallery']" (click)="onPageChange();" [ngClass]="{'active': onCurrentPage('gallery')}">Galería</a>
+                    <a [routerLink]="['about-us']" (click)="onPageChange();" [ngClass]="{'active': onCurrentPage('about-us')}">Sobre nosotros</a>
                 </div>
             </div>
         </div>

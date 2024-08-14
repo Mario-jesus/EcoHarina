@@ -66,17 +66,22 @@ main {
 .text-hover-theme {
     transition: var(--transition-2);
 
-    &:hover, &:focus {
+    &:hover {
         color: var(--theme-color) !important;
     }
 }
 
 .text-twinkle {
-    font-weight: 800 !important;
+    font-weight: 600 !important;
     color: var(--color-5) !important;
     text-decoration: none;
     transition: color 500ms;
     animation: twinkle 500ms linear alternate infinite;
+}
+
+.active {
+    font-weight: 600 !important;
+    color: var(--theme-color) !important;
 }
 
 hr {
@@ -119,7 +124,7 @@ h4 {
 
 p {
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 400;
     color: #444;
     margin: 0;
     text-align: justify;
@@ -131,8 +136,7 @@ b, strong {
 }
 
 ol {
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-size: 1rem;
     color: #444;
     padding-left: 20px;
     margin: 0;
@@ -156,7 +160,7 @@ ul {
 
 ul li {
     font-size: 1rem;
-    color: #666766;
+    color: #444;
     padding-left: 2.1rem;
     line-height: 1.875rem;
     position: relative;
@@ -281,17 +285,18 @@ ul li:not(:first-child) {
 .nav__content a {
     font-weight: initial;
     font-size: 1.3rem;
-    color: #555;
+    color: #333;
     text-decoration: none;
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;
     display: flex;
     align-items: center;
-    transition: var(--transition-2);
+    transition: color ease 300ms;
 
     &:hover {
         color: var(--theme-color);
+        text-decoration: underline;
     }
 }
 
@@ -668,8 +673,16 @@ ul li:not(:first-child) {
 
 /* Animations classes */
 
+.fromLeftToRightAnimation {
+    animation: fromLeftToRight ease 800ms 500ms both;
+}
+
+.fromBottomToTopAnimation {
+    animation: fromBottomToTop ease 800ms 500ms both;
+}
+
 .showComponentAnimation {
-    animation: showComponent 1s both;
+    animation: showComponent ease 1s both;
 }
 
 /* Animations */
@@ -681,6 +694,26 @@ ul li:not(:first-child) {
 
     from {
         opacity: 0;
+    }
+}
+
+@keyframes fromLeftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    } to {
+        opacity: 1;
+        transform: unset;
+    }
+}
+
+@keyframes fromBottomToTop {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    } to {
+        opacity: 1;
+        transform: unset;
     }
 }
 
@@ -760,7 +793,6 @@ ul li:not(:first-child) {
 
     .nav__content a {
         font-size: 1rem;
-        color: #000;
         height: 100%;
     }
 
