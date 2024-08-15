@@ -5,13 +5,21 @@
 .picture-local {
     width: 100%;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 0 auto 1em;
     overflow: hidden;
 
     & > img {
         width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
         display: block;
     }
+}
+
+.picture-float {
+    width: 250px;
+    height: 150px;
 }
 
 .info__container {
@@ -30,13 +38,16 @@
     padding: 1em;
     border: 1px solid #ccc;
     border-radius: 10px;
+}
+
+.info__item--flex {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1em;
 }
 
-.info__item  > i {
+.info__item--flex  > i {
     font-size: 5em;
     margin: 0 auto;
 }
@@ -77,8 +88,16 @@
 }
 
 @media only screen and (min-width: 992px) {
+    .picture-float {
+        float: left;
+        margin: 0 1.3em 0 0;
+    }
+
     .info__item {
-        flex-wrap: nowrap;
         width: 49%;
+    }
+
+    .info__item--flex {
+        flex-wrap: nowrap;
     }
 }
