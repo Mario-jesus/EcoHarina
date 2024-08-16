@@ -18,7 +18,7 @@ export class AboutUsComponent implements OnInit {
       subtitle: 'Sobre nosotros',
       carousel: false,
       images: [
-        { id: 1, name: 'about-us', image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }
+        { id: 1, name: 'about-us', image: '/assets/about-us-cover.jpg' }
       ]
     };
   }
