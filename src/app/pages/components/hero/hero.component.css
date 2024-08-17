@@ -94,6 +94,10 @@
 .hero__return a {
     color: #fff;
     text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .hero__return h5 {

@@ -30,16 +30,16 @@ export class GalleryComponent implements OnInit, AfterViewInit {
 
     this.pageData = {
       title: 'Nuestra galería',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus deleniti recusandae corrupti vero ab ut?',
+      description: 'En esta sección podrá encontrar imágenes desde las calabazas chihua en diferentes etapas hasta nuestro equipo trabajando para brindarle el mejor valor posible.',
       images: [
         { id: 1, description: '', url: '/assets/equipo.jpg' },
-        { id: 2, description: '', url: '/assets/calabazas.jpg' },
-        { id: 3, description: '', url: '/assets/calabaza-disecada.jpg' },
+        { id: 2, description: 'Calabazas chihua', url: '/assets/calabazas.jpg' },
+        { id: 3, description: 'Calabaza desidratada', url: '/assets/calabaza-disecada.jpg' },
         { id: 4, description: '', url: '/assets/calabaza-desidratada-lab.jpg' },
-        { id: 5, description: '', url: '/assets/ecoharina-product.png' },
+        { id: 5, description: 'Empaque del producto', url: '/assets/ecoharina-product.png' },
         { id: 6, description: '', url: '/assets/collage.jpg' },
-        { id: 7, description: '', url: '/assets/residuos-de-calabaza.jpg' },
-        { id: 8, description: '', url: '/assets/harina.jpg' },
+        { id: 7, description: 'Residuos de calabazas chihua', url: '/assets/residuos-de-calabaza.jpg' },
+        { id: 8, description: 'Harina de calabaza de chihua', url: '/assets/harina.jpg' },
         { id: 9, description: '', url: '/assets/innovacion.jpg' },
       ]
     };

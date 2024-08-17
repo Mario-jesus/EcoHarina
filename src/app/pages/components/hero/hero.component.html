@@ -17,9 +17,9 @@
         </div>
     } @else {
         <div class="container-css">
-            <h2 class="hero__title">{{pageData().title}}</h2>
-            <div class="hero__return">
-                <a [routerLink]="['']" class="text-hover-theme">Inicio</a>
+            <h2 class="hero__title fromTopToBottomAnimation">{{pageData().title}}</h2>
+            <div class="hero__return fromRightToLeftAnimation">
+                <a [routerLink]="['']">Inicio</a>
                 <h5>{{pageData().subtitle}}</h5>
             </div>
         </div>
