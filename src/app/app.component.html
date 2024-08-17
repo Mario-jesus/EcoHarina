@@ -29,8 +29,8 @@
             <img src="/assets/ecoharina-light.png" alt="logo">
             <div>
                 <p>Dirección:  Km. 3 carretera Balancán-Villahermosa, Balancán, Tabasco C.P. 86930</p>
-                <p><a>EcoHarina</a> - &copy; Copyright 2024</p>
-                <p>Desarrollado por: <a>Equipo de EcoHarina</a></p>
+                <p><a [routerLink]="['']" (click)="onPageChange();">EcoHarina</a> - &copy; Copyright 2024</p>
+                <p>Desarrollado por: <a [routerLink]="['about-us']" (click)="onPageChange();">Equipo de EcoHarina</a></p>
             </div>
         </div>
         <div class="last-footer__contact">
