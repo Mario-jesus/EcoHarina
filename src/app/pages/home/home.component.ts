@@ -1,16 +1,21 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, AfterViewInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { PageService } from '../../services/page.service';
+import { AnimationService } from '../../services/animation.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   private _pageService = inject(PageService);
+  private _animationService = inject(AnimationService);
+  @ViewChildren('ShowAnimationOpacity') ShowAnimationOpacity!: QueryList<ElementRef<HTMLDivElement>>;
+  @ViewChildren('ShowAnimationLeft') ShowAnimationLeft!: QueryList<ElementRef<HTMLDivElement>>;
+  @ViewChildren('ShowAnimationRight') ShowAnimationRight!: QueryList<ElementRef<HTMLDivElement>>;
 
   ngOnInit(): void {
     this._pageService.setHeroData = {
@@ -25,6 +30,33 @@ export class HomeComponent implements OnInit {
         {id: 4, name: 'item4', image: 'https://images.pexels.com/photos/185941/pexels-photo-185941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
       ]
     };
+  }
+
+  ngAfterViewInit(): void {
+    this._animationService.createAnimationObserver(this.ShowAnimationOpacity, (element) => {
+      this._animationService.startAnimation(
+        element,
+        '800ms',
+        { opacity: 0, transform: 'translateY(20px)' },
+        { opacity: 1, transform: 'unset' },
+      )
+    });
+    this._animationService.createAnimationObserver(this.ShowAnimationLeft, (element) => {
+      this._animationService.startAnimation(
+        element,
+        '800ms',
+        { opacity: 0, transform: 'translateX(-100%)' },
+        { opacity: 1, transform: 'unset' },
+      )
+    });
+    this._animationService.createAnimationObserver(this.ShowAnimationRight, (element) => {
+      this._animationService.startAnimation(
+        element,
+        '800ms',
+        { opacity: 0, visibility: 'hidden', transform: 'translateX(100%)' },
+        { opacity: 1, visibility: 'visible', transform: 'unset' },
+      )
+    });
   }
 
 }

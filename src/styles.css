@@ -30,6 +30,7 @@ body {
 
 main {
     min-height: 50vh;
+    overflow: hidden;
 }
 
 .container-css {
