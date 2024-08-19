@@ -22,7 +22,8 @@ export class AnimationService {
   public createAnimationObserver(array: QueryList<ElementRef<Element>>, callback: (element: Element) => void) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        const rect = entry.target.getBoundingClientRect();
+        if (entry.isIntersecting && rect.bottom >= window.innerHeight) {
           callback(entry.target);
         }
       });
