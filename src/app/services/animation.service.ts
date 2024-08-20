@@ -26,4 +26,22 @@ export class AnimationService {
     array.forEach((element) => observer.observe(element.nativeElement));
   }
 
+  public InitializeAnimationObservers(ArrayElements: QueryList<ElementRef<Element>>, ArrayToggles: boolean[]) {
+    ArrayElements.map(() => {
+      ArrayToggles.push(false);
+    });
+
+    ArrayElements.forEach((element, index) => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            ArrayToggles[index] = true;
+          }
+        });
+      });
+
+      observer.observe(element.nativeElement);
+    });
+  }
+
 }

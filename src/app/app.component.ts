@@ -78,7 +78,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   protected onPageChange() {
     this.navCheck.nativeElement.checked = false;
-    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+    window.scroll({ top: 0, left: 0, behavior: "instant" });
   }
 
   protected onCurrentPage(currentPage: string): boolean {
