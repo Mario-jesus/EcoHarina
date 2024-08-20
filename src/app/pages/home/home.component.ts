@@ -17,9 +17,9 @@ import { fadeInFromBottomToTop, fadeInFromLeftToRight, fadeInFromRightToLeft } f
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  protected animationStatesFB2T: boolean[] = [];
-  protected animationStatesFL2R: boolean[] = [];
-  protected animationStatesFR2L: boolean[] = [];
+  protected animationStatesFB2T: string[] = [];
+  protected animationStatesFL2R: string[] = [];
+  protected animationStatesFR2L: string[] = [];
   private _pageService = inject(PageService);
   private _animationService = inject(AnimationService);
   @ViewChildren('ShowAnimationFB2T') elementsFB2T!: QueryList<ElementRef<Element>>;
@@ -46,4 +46,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this._animationService.InitializeAnimationObservers(this.elementsFL2R, this.animationStatesFL2R);
     this._animationService.InitializeAnimationObservers(this.elementsFR2L, this.animationStatesFR2L);
   }
+
 }

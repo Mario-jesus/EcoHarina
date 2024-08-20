@@ -25,7 +25,7 @@
 </main>
 <footer class="last-footer" style="background-image: url('/assets/parallax2.jpg');">
     <div class="container-css">
-        <div class="last-footer__content" #ShowAnimationOpacity>
+        <div class="last-footer__content" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[0]">
             <img src="/assets/ecoharina-light.png" alt="logo">
             <div>
                 <p>Dirección:  Km. 3 carretera Balancán-Villahermosa, Balancán, Tabasco C.P. 86930</p>
@@ -34,8 +34,8 @@
             </div>
         </div>
         <div class="last-footer__contact">
-            <p #ShowAnimationLeft>Teléfono: <strong>(916) - 126 - 8346</strong></p>
-            <div #ShowAnimationRight>
+            <p #ShowAnimationFL2R [@fadeInFromLeftToRight]="animationStatesFL2R[0]">Teléfono: <strong>(916) - 126 - 8346</strong></p>
+            <div #ShowAnimationFR2L [@fadeInFromRightToLeft]="animationStatesFR2L[0]">
                 <a href="https://www.facebook.com/profile.php?id=61564239909120" target="_blank" rel="noopener" class="contact__btn contact__btn--facebook" title="Facebook"></a>
                 <a href="mailto:customer.support@ecoharina.site" class="contact__btn contact__btn--mail" title="Mail"></a>
                 <a href="https://www.instagram.com/eco.harina/" target="_blank" rel="noopener" class="contact__btn contact__btn--youtube" title="Instagram"></a>

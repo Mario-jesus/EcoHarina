@@ -6,6 +6,7 @@ import { PageHeroI } from './interfaces/page';
 import { PageService } from './services/page.service';
 import { HeroComponent } from './pages/components/hero/hero.component';
 import { AnimationService } from './services/animation.service';
+import { fadeInFromBottomToTop, fadeInFromLeftToRight, fadeInFromRightToLeft } from './shared/animations/animations';
 
 @Component({
   selector: 'app-root',
@@ -25,55 +26,33 @@ import { AnimationService } from './services/animation.service';
         style({ opacity: 0, transform: 'scale(0)' }),
         animate('800ms 500ms ease', style({ opacity: 1, transform: 'unset' })),
       ])
-    ])
+    ]),
+    fadeInFromBottomToTop,
+    fadeInFromLeftToRight,
+    fadeInFromRightToLeft
   ]
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
+  protected animationStatesFB2T: string[] = [];
+  protected animationStatesFL2R: string[] = [];
+  protected animationStatesFR2L: string[] = [];
   public heroData!: WritableSignal<PageHeroI>;
   private _pageService = inject(PageService);
   private _animationService = inject(AnimationService);
   @ViewChild("navCheck") navCheck!: ElementRef<HTMLInputElement>;
-  @ViewChildren('ShowAnimationOpacity') ShowAnimationOpacity!: QueryList<ElementRef<HTMLDivElement>>;
-  @ViewChildren('ShowAnimationLeft') ShowAnimationLeft!: QueryList<ElementRef<HTMLDivElement>>;
-  @ViewChildren('ShowAnimationRight') ShowAnimationRight!: QueryList<ElementRef<HTMLDivElement>>;
+  @ViewChildren('ShowAnimationFB2T') elementsFB2T!: QueryList<ElementRef<Element>>;
+  @ViewChildren('ShowAnimationFL2R') elementsFL2R!: QueryList<ElementRef<Element>>;
+  @ViewChildren('ShowAnimationFR2L') elementsFR2L!: QueryList<ElementRef<Element>>;
 
   ngOnInit(): void {
     this.heroData = this._pageService.getHeroData;
   }
 
   ngAfterViewInit(): void {
-    this._animationService.createAnimationObserver(
-      this.ShowAnimationOpacity, '1s',
-      { opacity: 0, transform: 'translateY(100px)' },
-      { opacity: 1, transform: 'unset' },
-    );
-
-    if (window.innerWidth >= 992) {
-      this._animationService.createAnimationObserver(
-        this.ShowAnimationLeft, '1s',
-        { opacity: 0, transform: 'translateX(-100%)' },
-        { opacity: 1, transform: 'unset' },
-      );
-
-      this._animationService.createAnimationObserver(
-        this.ShowAnimationRight, '1s',
-        { opacity: 0, transform: 'translateX(100%)' },
-        { opacity: 1, transform: 'unset' },
-      );
-    } else {
-      this._animationService.createAnimationObserver(
-        this.ShowAnimationLeft, '1s',
-        { opacity: 0, transform: 'translateY(50px)' },
-        { opacity: 1, transform: 'unset' },
-      );
-
-      this._animationService.createAnimationObserver(
-        this.ShowAnimationRight, '1s',
-        { opacity: 0, transform: 'translateY(50px)' },
-        { opacity: 1, transform: 'unset' },
-      );
-    }
+    this._animationService.InitializeAnimationObservers(this.elementsFB2T, this.animationStatesFB2T);
+    this._animationService.InitializeAnimationObservers(this.elementsFL2R, this.animationStatesFL2R);
+    this._animationService.InitializeAnimationObservers(this.elementsFR2L, this.animationStatesFR2L);
   }
 
   protected onPageChange() {

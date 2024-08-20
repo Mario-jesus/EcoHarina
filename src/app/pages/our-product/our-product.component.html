@@ -1,5 +1,5 @@
-<h3 class="container-css text-center mt-5 mb-5" #ShowAnimationOpacity>Versatilidad</h3>
-<section class="container-css details-info" #ShowAnimationOpacity>
+<h3 class="container-css text-center mt-5 mb-5" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[0]">Versatilidad</h3>
+<section class="container-css details-info" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[1]">
     <picture class="details-info__picture"><img src="https://images.pexels.com/photos/1153756/pexels-photo-1153756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Product"></picture>
     <div class="details-info__texts">
         <div>
@@ -17,28 +17,28 @@
     </div>
 </section>
 <section class="sustainability">
-    <h3 class="container-css text-center mb-4" #ShowAnimationOpacity>Sostenibilidad</h3>
+    <h3 class="container-css text-center mb-4" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[2]">Sostenibilidad</h3>
     <div class="container-css sustainability__content">
-        <div #ShowAnimationLeft>
+        <div #ShowAnimationFL2R [@fadeInFromLeftToRight]="animationStatesFL2R[0]">
             <h4>Sostenibilidad Ambiental</h4>
             <p>El valor ambiental de EcoHarina radica en convertir residuos agrícolas de calabaza chihua en un producto útil, lo que reduce los desechos orgánicos y la emisión de metano. Al usar recursos locales y evitar transportes largos, se disminuye la huella de carbono. La producción puede integrarse en la agricultura regenerativa, mejorando la salud del suelo y la captura de carbono.</p>
         </div>
-        <div #ShowAnimationRight>
+        <div #ShowAnimationFR2L [@fadeInFromRightToLeft]="animationStatesFR2L[0]">
             <h4>Sostenibilidad Social</h4>
             <p>La producción de EcoHarina puede impulsar la economía rural al generar empleos y fijar a la población en el campo. Al crear un mercado para los residuos de calabaza, mejora la rentabilidad de los agricultores y promueve prácticas agrícolas sostenibles. Además, el desarrollo de una cadena de valor local alrededor de la calabaza chihua fortalece la economía rural.</p>
         </div>
-        <div #ShowAnimationLeft>
+        <div #ShowAnimationFL2R [@fadeInFromLeftToRight]="animationStatesFL2R[1]">
             <h4>Sostenibilidad Económica</h4>
             <p>Es crucial llevar a cabo un análisis económico detallado para asegurar la viabilidad a largo plazo de EcoHarina, evaluando costos de producción, precios de venta, márgenes de beneficio y demanda del mercado. La venta de los residuos de calabaza a un precio justo puede proporcionar ingresos adicionales a los agricultores, diversificando sus fuentes de ingresos y disminuyendo su dependencia de un solo cultivo.</p>
         </div>
-        <div #ShowAnimationRight>
+        <div #ShowAnimationFR2L [@fadeInFromRightToLeft]="animationStatesFR2L[1]">
             <h4>Sostenibilidad Cultural</h4>
             <p>Al promover el uso de un producto local como la calabaza chihua, se contribuye a valorizar la biodiversidad y los conocimientos tradicionales asociados a este cultivo. Además la producción de EcoHarina puede fortalecer la identidad local y generar un sentido de orgullo por los productos regionales.</p>
         </div>
     </div>
 </section>
-<h3 class="container-css text-center mb-5" #ShowAnimationOpacity>Información nutrimental</h3>
-<section class="container-css details-info details-info--reverse" #ShowAnimationOpacity>
+<h3 class="container-css text-center mb-5" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[3]">Información nutrimental</h3>
+<section class="container-css details-info details-info--reverse" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[4]">
     <picture class="details-info__picture"><img src="/assets/ecoharina-product.png" alt="Product"></picture>
     <div class="details-info__texts">
         <div>
@@ -56,8 +56,8 @@
         </div>
     </div>
 </section>
-<h3 class="container-css text-center mb-4" #ShowAnimationOpacity>Preguntas frecuentes</h3>
-<div class="accordion container-css mb-7" id="Accordion" #ShowAnimationOpacity>
+<h3 class="container-css text-center mb-4" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[5]">Preguntas frecuentes</h3>
+<div class="accordion container-css mb-7" id="Accordion" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[6]">
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

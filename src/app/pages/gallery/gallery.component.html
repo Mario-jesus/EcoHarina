@@ -14,11 +14,11 @@
     </div>
 </section>
 <!-- Content -->
-<h2 class="container-css mt-5" #ShowAnimationOpacity>{{pageData.title}}</h2>
-<p class="container-css paragraph-description text-center mt-3" #ShowAnimationOpacity>{{pageData.description}}</p>
+<h2 class="container-css mt-5" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[0]">{{pageData.title}}</h2>
+<p class="container-css paragraph-description text-center mt-3" #ShowAnimationFB2T [@fadeInFromBottomToTop]="animationStatesFB2T[1]">{{pageData.description}}</p>
 <section class="container-css gallery pb-5">
     @for (image of pageData.images; track image.id) {
-        <figure class="gallery__item" #ShowAnimationFadeIn>
+        <figure class="gallery__item" #ShowAnimationFB2TS [@fadeInFromBottomToTopScale]="animationStatesFB2TS[(image.id - 1)]">
             <div class="gallery__description">{{image.description}}</div>
             <img class="gallery__img" src="{{image.url}}" alt="{{image.description}}">
         </figure>

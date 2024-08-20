@@ -2,16 +2,23 @@ import { Component, inject, OnInit, AfterViewInit, ViewChild, ElementRef, ViewCh
 import { CommonModule } from '@angular/common';
 import { PageService } from '../../services/page.service';
 import { AnimationService } from '../../services/animation.service';
+import { fadeInFromBottomToTop, fadeInFromBottomToTopScale, } from '../../shared/animations/animations';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './gallery.component.html',
-  styleUrl: './gallery.component.css'
+  styleUrl: './gallery.component.css',
+  animations: [
+    fadeInFromBottomToTop,
+    fadeInFromBottomToTopScale
+  ]
 })
 export class GalleryComponent implements OnInit, AfterViewInit {
 
+  protected animationStatesFB2T: string[] = [];
+  protected animationStatesFB2TS: string[] = [];
   protected pageData: {title: string, description: string, images: {id: number, description: string, url: string}[]} = {title: '', description: '', images: []};
   private _pageService = inject(PageService);
   private _animationService = inject(AnimationService);
@@ -19,8 +26,8 @@ export class GalleryComponent implements OnInit, AfterViewInit {
   @ViewChild("imageMain") imageMain!: ElementRef<HTMLImageElement>;
   @ViewChild("imageDescription") imageDescription!: ElementRef<HTMLDivElement>;
   @ViewChild("showDescriptionBtn") showDescriptionBtn!: ElementRef<HTMLInputElement>;
-  @ViewChildren("ShowAnimationOpacity") ShowAnimationOpacity!: QueryList<ElementRef<HTMLDivElement>>;
-  @ViewChildren("ShowAnimationFadeIn") ShowAnimationFadeIn!: QueryList<ElementRef<HTMLDivElement>>;
+  @ViewChildren('ShowAnimationFB2T') elementsFB2T!: QueryList<ElementRef<Element>>;
+  @ViewChildren('ShowAnimationFB2TS') elementsFB2TS!: QueryList<ElementRef<Element>>;
 
   ngOnInit(): void {
     this._pageService.setHeroData = {
@@ -51,18 +58,8 @@ export class GalleryComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.addEventImagesModal();
-
-    this._animationService.createAnimationObserver(
-      this.ShowAnimationOpacity, '1s',
-      { opacity: 0, transform: 'translateY(100px)' },
-      { opacity: 1, transform: 'unset' },
-    );
-
-    this._animationService.createAnimationObserver(
-      this.ShowAnimationFadeIn, '1s',
-      { opacity: 0, transform: 'translateY(100px) scale(50%)' },
-      { opacity: 1, transform: 'unset' },
-    );
+    this._animationService.InitializeAnimationObservers(this.elementsFB2T, this.animationStatesFB2T);
+    this._animationService.InitializeAnimationObservers(this.elementsFB2TS, this.animationStatesFB2TS);
   }
 
   protected addEventImagesModal(): void {
