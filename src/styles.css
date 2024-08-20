@@ -671,28 +671,6 @@ ul li:not(:first-child) {
     flex-grow: 1;
 }
 
-/* Animations classes */
-
-.fromTopToBottomAnimation {
-    animation: fromTopToBottom ease 800ms 500ms both;
-}
-
-.fromLeftToRightAnimation {
-    animation: fromLeftToRight ease 800ms 500ms both;
-}
-
-.fromBottomToTopAnimation {
-    animation: fromBottomToTop ease 800ms 500ms both;
-}
-
-.fromRightToLeftAnimation {
-    animation: fromRightToLeft ease 800ms 500ms both;
-}
-
-.showComponentAnimation {
-    animation: showComponent ease 1s both;
-}
-
 /* Animations */
 
 @keyframes twinkle {
@@ -702,56 +680,6 @@ ul li:not(:first-child) {
 
     from {
         opacity: 0;
-    }
-}
-
-@keyframes fromTopToBottom {
-    from {
-        opacity: 0;
-        transform: translateY(-200px);
-    } to {
-        opacity: 1;
-        transform: unset;
-    }
-}
-
-@keyframes fromLeftToRight {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    } to {
-        opacity: 1;
-        transform: unset;
-    }
-}
-
-@keyframes fromBottomToTop {
-    from {
-        opacity: 0;
-        transform: translateY(200px);
-    } to {
-        opacity: 1;
-        transform: unset;
-    }
-}
-
-@keyframes fromRightToLeft {
-    from {
-        opacity: 0;
-        transform: translateX(100%);
-    } to {
-        opacity: 1;
-        transform: unset;
-    }
-}
-
-@keyframes showComponent {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    } to {
-        opacity: 1;
-        transform: unset;
     }
 }
 

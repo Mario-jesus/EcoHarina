@@ -12,13 +12,13 @@
     }
     @if (pageData().page == "home") {
         <div class="container-css">
-            <h1 class="hero__title text-hover-theme mt-3 mb-2 fromLeftToRightAnimation">{{pageData().title}}</h1>
-            <h3 class="hero__subtitle fromBottomToTopAnimation">{{pageData().subtitle}}</h3>
+            <h1 class="hero__title text-hover-theme mt-3 mb-2" @fromLeftToRight>{{pageData().title}}</h1>
+            <h3 class="hero__subtitle" @fromBottomToTop>{{pageData().subtitle}}</h3>
         </div>
     } @else {
         <div class="container-css">
-            <h2 class="hero__title fromTopToBottomAnimation">{{pageData().title}}</h2>
-            <div class="hero__return fromRightToLeftAnimation">
+            <h2 class="hero__title" @fromTopToBottom>{{pageData().title}}</h2>
+            <div class="hero__return" @fromRightToLeft>
                 <a [routerLink]="['']">Inicio</a>
                 <h5>{{pageData().subtitle}}</h5>
             </div>

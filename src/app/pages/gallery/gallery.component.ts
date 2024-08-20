@@ -1,6 +1,7 @@
-import { Component, inject, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { PageService } from '../../services/page.service';
+import { Component, inject, OnInit, AfterViewInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PageService } from '../../services/page.service';
+import { AnimationService } from '../../services/animation.service';
 
 @Component({
   selector: 'app-gallery',
@@ -13,10 +14,13 @@ export class GalleryComponent implements OnInit, AfterViewInit {
 
   protected pageData: {title: string, description: string, images: {id: number, description: string, url: string}[]} = {title: '', description: '', images: []};
   private _pageService = inject(PageService);
+  private _animationService = inject(AnimationService);
   @ViewChild("showImageToggle") showImageToggle!: ElementRef<HTMLInputElement>;
   @ViewChild("imageMain") imageMain!: ElementRef<HTMLImageElement>;
   @ViewChild("imageDescription") imageDescription!: ElementRef<HTMLDivElement>;
   @ViewChild("showDescriptionBtn") showDescriptionBtn!: ElementRef<HTMLInputElement>;
+  @ViewChildren("ShowAnimationOpacity") ShowAnimationOpacity!: QueryList<ElementRef<HTMLDivElement>>;
+  @ViewChildren("ShowAnimationFadeIn") ShowAnimationFadeIn!: QueryList<ElementRef<HTMLDivElement>>;
 
   ngOnInit(): void {
     this._pageService.setHeroData = {
@@ -47,6 +51,18 @@ export class GalleryComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.addEventImagesModal();
+
+    this._animationService.createAnimationObserver(
+      this.ShowAnimationOpacity, '1s',
+      { opacity: 0, transform: 'translateY(100px)' },
+      { opacity: 1, transform: 'unset' },
+    );
+
+    this._animationService.createAnimationObserver(
+      this.ShowAnimationFadeIn, '1s',
+      { opacity: 0, transform: 'translateY(100px) scale(50%)' },
+      { opacity: 1, transform: 'unset' },
+    );
   }
 
   protected addEventImagesModal(): void {

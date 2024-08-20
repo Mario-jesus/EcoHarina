@@ -33,30 +33,36 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this._animationService.createAnimationObserver(this.ShowAnimationOpacity, (element) => {
-      this._animationService.startAnimation(
-        element,
-        '800ms',
-        { opacity: 0, transform: 'translateY(20px)' },
-        { opacity: 1, transform: 'unset' },
-      )
-    });
-    this._animationService.createAnimationObserver(this.ShowAnimationLeft, (element) => {
-      this._animationService.startAnimation(
-        element,
-        '800ms',
+    this._animationService.createAnimationObserver(
+      this.ShowAnimationOpacity, '1s',
+      { opacity: 0, transform: 'translateY(100px)' },
+      { opacity: 1, transform: 'unset' },
+    );
+
+    if (window.innerWidth >= 992) {
+      this._animationService.createAnimationObserver(
+        this.ShowAnimationLeft, '1s',
         { opacity: 0, transform: 'translateX(-100%)' },
         { opacity: 1, transform: 'unset' },
-      )
-    });
-    this._animationService.createAnimationObserver(this.ShowAnimationRight, (element) => {
-      this._animationService.startAnimation(
-        element,
-        '800ms',
-        { opacity: 0, visibility: 'hidden', transform: 'translateX(100%)' },
-        { opacity: 1, visibility: 'visible', transform: 'unset' },
-      )
-    });
-  }
+      );
 
+      this._animationService.createAnimationObserver(
+        this.ShowAnimationRight, '1s',
+        { opacity: 0, transform: 'translateX(100%)' },
+        { opacity: 1, transform: 'unset' },
+      );
+    } else {
+      this._animationService.createAnimationObserver(
+        this.ShowAnimationLeft, '1s',
+        { opacity: 0, transform: 'translateY(50px)' },
+        { opacity: 1, transform: 'unset' },
+      );
+
+      this._animationService.createAnimationObserver(
+        this.ShowAnimationRight, '1s',
+        { opacity: 0, transform: 'translateY(50px)' },
+        { opacity: 1, transform: 'unset' },
+      );
+    }
+  }
 }
