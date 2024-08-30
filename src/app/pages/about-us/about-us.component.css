@@ -36,6 +36,7 @@
 }
 
 .email {
+    font-size: 1.3rem;
     color: var(--theme-color);
     text-decoration: none;
 
