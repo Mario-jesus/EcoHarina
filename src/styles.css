@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --breakpoint-xl: 1200px;
+    --breakpoint-xl: 1440px;
     --breakpoint-lg: 992px;
     --breakpoint-md: 768px;
     --breakpoint-sm: 576px;
@@ -34,7 +34,7 @@ main {
 }
 
 .container-css {
-    width: 90vw;
+    width: 90%;
     max-width: var(--breakpoint-xl);
     margin: 0 auto;
     overflow: hidden;
